@@ -20,34 +20,24 @@ class MyHomeScreen extends StatelessWidget {
             )
           ]),
         ),
-        body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: CustomScrollView(
-              physics: const BouncingScrollPhysics(),
-              slivers: [
-                SliverToBoxAdapter(
-                  child: CategoriesListView(),
-                ),
-                const SliverToBoxAdapter(
-                  child: SizedBox(
-                    height: 20,
-                  ),
-                ),
-                NewsListViewBuilder()
-                // SliverToBoxAdapter(
-                //   child: NewsListView(),
-                // )
-              ],
+        body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
+              child: CategoriesListView(),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 20,
+              ),
+            ),
+            NewsListViewBuilder(
+              category: 'general',
             )
-            // Column(
-            //   children: [
-            //     CategoriesListView(),
-            //     SizedBox(
-            //       height: 20,
-            //     ),
-            //     NewsListView(),
-            //   ],
-            // ),
-            ));
+            // SliverToBoxAdapter(
+            //   child: NewsListView(),
+            // )
+          ],
+        ));
   }
 }

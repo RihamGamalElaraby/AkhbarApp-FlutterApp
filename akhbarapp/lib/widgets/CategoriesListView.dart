@@ -9,18 +9,19 @@ class CategoriesListView extends StatelessWidget {
   });
   final List<CategoryModel> categories = [
     CategoryModel(
-        categoryName: 'Business', imageAssetUrl: 'assets/business.avif'),
+        categoryName: 'business', imageAssetUrl: 'assets/business.avif'),
     CategoryModel(
-        categoryName: 'Entertainment',
+        categoryName: 'entertainment',
         imageAssetUrl: 'assets/entertaiment.avif'),
-    CategoryModel(
-        categoryName: 'general', imageAssetUrl: 'assets/general.avif'),
+    CategoryModel(categoryName: 'sports', imageAssetUrl: 'assets/general.avif'),
     CategoryModel(categoryName: 'health', imageAssetUrl: 'assets/health.avif'),
     CategoryModel(
         categoryName: 'science', imageAssetUrl: 'assets/science.avif'),
     CategoryModel(categoryName: 'sports', imageAssetUrl: 'assets/sports.avif'),
     CategoryModel(
         categoryName: 'technology', imageAssetUrl: 'assets/technology.jpeg'),
+    CategoryModel(
+        categoryName: 'health', imageAssetUrl: 'assets/technology.jpeg'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,8 @@ class CategoriesListView extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: categories.length,
             itemBuilder: (context, index) {
-              return CategoryCard(category: categories[index]);
+              return CategoryCard(
+                  category: categories[index], context: context);
             }));
   }
 }
