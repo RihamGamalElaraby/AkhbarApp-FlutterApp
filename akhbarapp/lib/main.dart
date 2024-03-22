@@ -2,16 +2,17 @@ import 'package:akhbarapp/Screens/MyHomePage.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'services/newsService.dart';
+
+void main() async {
+  // getNews();
+  NewsService(Dio()).getGeneralNews();
+  // NewsService news = NewsService(Dio());
+  // news.getGeneralNews();
   runApp(const MyApp());
 }
 
-final dio = Dio();
-
-void getHttp() async {
-  final response = await dio.get('https://dart.dev');
-  print(response);
-}
+// final dio = Dio();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomeScreen(),
+      home: MyHomeScreen(),
     );
   }
 }

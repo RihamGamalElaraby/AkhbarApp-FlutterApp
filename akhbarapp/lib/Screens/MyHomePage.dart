@@ -1,5 +1,5 @@
 import 'package:akhbarapp/widgets/CategoriesListView.dart';
-import 'package:akhbarapp/widgets/NewsListView.dart';
+import 'package:akhbarapp/widgets/NewsListViewBuilder.dart';
 import 'package:flutter/material.dart';
 
 class MyHomeScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class MyHomeScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: const Row(mainAxisSize: MainAxisSize.min, children: [
-            Text('Cloud'),
+            Text('News'),
             Text(
               'Cloud',
               style: TextStyle(color: Colors.orange),
@@ -33,7 +33,7 @@ class MyHomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                 ),
-                NewsListView()
+                NewsListViewBuilder()
                 // SliverToBoxAdapter(
                 //   child: NewsListView(),
                 // )
